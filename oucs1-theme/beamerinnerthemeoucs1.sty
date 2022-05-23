@@ -1,0 +1,54 @@
+% Credit for starting point: https://tex.stackexchange.com/a/146682/256021
+% Developed for OUCS use by David Eyers
+\mode<presentation>
+
+\setbeamertemplate{background}{
+  \begin{tikzpicture}
+  \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+  %\fill[color=brown] (0,2) rectangle (\the\paperwidth,\the\paperheight);
+  %\fill[color=orange] (0,0) rectangle(2.95,1.9);
+  %\fill[color=blue!50!cyan!80] (3.05,0) rectangle(\the\paperwidth,1.9);
+  %\ifnum\thepage>1\relax%
+   %\fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);
+   %\fi
+  \end{tikzpicture}
+}
+
+% Title page
+\defbeamertemplate*{title page}{texsx}[1][]
+{
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[xshift=0cm,yshift=-1.9cm,opacity=0.25] at (current page.north){%
+    \includegraphics[width=3cm]{oucs-mascot}};
+    \node[xshift=0cm,yshift=0.75cm,scale=0.5] at (current page.south){%
+    \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{\includegraphics[width=3cm]{by-nc-sa}}};
+    \node[xshift=0cm,yshift=1.75cm] at (current page.south){%
+    \begin{beamercolorbox}[wd=\textwidth,center,#1]{author}
+      \usebeamerfont{author}\insertauthor%
+    \end{beamercolorbox}%
+    };
+    \node[xshift=0cm,yshift=2.45cm] at (current page.south){%
+    \begin{beamercolorbox}[wd=\textwidth,center,#1]{date}
+      \usebeamerfont{author}\insertdate%
+    \end{beamercolorbox}%
+    };
+    \node[xshift=0cm,yshift=3.35cm,anchor=south,text depth=0pt] at (current page.south){%
+    \begin{beamercolorbox}[wd=\textwidth,center,#1]{title page header}
+      \usebeamerfont{title}\inserttitle\par%
+    \end{beamercolorbox}%
+    };
+    \node[yshift=4.35mm,text depth=0pt] at (current page.south){%
+    \begin{beamercolorbox}[wd=\paperwidth,leftskip=7mm,rightskip=7mm]{framefooter} 
+      \usebeamerfont{framefooter}% ready for footer
+    \end{beamercolorbox}
+    };%    
+\end{tikzpicture}
+}
+
+% Items
+\setbeamertemplate{items}[circle]
+\setbeamertemplate{sections/subsections in toc}[square]
+
+
+\mode
+<all>

@@ -1,0 +1,100 @@
+%% oucs1 Beamer style
+% Credit for starting point: https://tex.stackexchange.com/a/146682/256021
+% Developed for OUCS use by David Eyers
+% Adapted from Lech Szymanski's PowerPoint design
+\mode<presentation>
+
+%% Requirements
+\RequirePackage{tikz}
+
+%% Hacky convenience macro for slides
+\usepackage{environ}
+\usepackage{outlines}
+\NewEnviron{dframe}[1]{%
+\begin{frame}{#1}
+\begin{outline}
+\BODY
+\end{outline}
+\end{frame}
+}
+
+% fix up inter-item vertical spacing% 
+\usepackage{xpatch}
+% Handle item spacing https://tex.stackexchange.com/a/569780/256021
+\makeatletter
+\newcommand{\my@beamer@setsep}{%
+\ifnum\@itemdepth=1\relax
+     \setlength\itemsep{\my@beamer@itemsepi}% separation for first level
+   \else
+     \ifnum\@itemdepth=2\relax
+       \setlength\itemsep{\my@beamer@itemsepii}% separation for second level
+       %\setlength\topsep{0pt}% separation for second level
+%       \setlength\topsep{\my@beamer@itemsepii}% separation for second level
+     \else
+       \ifnum\@itemdepth=3\relax
+         \setlength\itemsep{\my@beamer@itemsepiii}% separation for third level
+         %\setlength\topsep{0pt}% separation for second level
+%         \setlength\topsep{\my@beamer@itemsepiii}% separation for second level
+   \fi\fi\fi}
+\newlength{\my@beamer@itemsepi}\setlength{\my@beamer@itemsepi}{4pt}
+\newlength{\my@beamer@itemsepii}\setlength{\my@beamer@itemsepii}{3pt}%{1.5ex}
+\newlength{\my@beamer@itemsepiii}\setlength{\my@beamer@itemsepiii}{3pt}%{1.5ex}
+\newcommand\setlistsep[3]{%
+    \setlength{\my@beamer@itemsepi}{#1}%
+    \setlength{\my@beamer@itemsepii}{#2}%
+    \setlength{\my@beamer@itemsepiii}{#3}%
+}
+\xpatchcmd{\itemize}
+  {\def\makelabel}
+  {\my@beamer@setsep\def\makelabel}
+ {}
+ {}
+
+\xpatchcmd{\beamer@enum@}
+  {\def\makelabel}
+  {\my@beamer@setsep\def\makelabel}
+ {}
+ {}
+\makeatother
+
+%% Adjust item spacing on slides
+% % For reference, from beamerbaselocalstructure.sty:
+% \setlength\leftmargini  {2em}
+% \setlength\leftmarginii  {2em}
+% \setlength\leftmarginiii  {2em}
+% \setlength  \labelsep  {.5em}
+% \setlength  \labelwidth{\leftmargini}
+% \addtolength\labelwidth{-\labelsep}
+
+\setlength\leftmargini {3.7mm}
+\setlength\leftmarginii  {5.8mm}
+\setlength\leftmarginiii  {5.9mm}
+\setlength\labelsep  {.4em}
+\setlength\labelwidth{\leftmargini}
+\addtolength\labelwidth{-\labelsep}
+
+%% width of slides
+\setbeamersize{text margin left=7mm,text margin right=7mm} 
+
+%% fonts - TODO should refactor this
+\usepackage{tgpagella}
+\usepackage{tgadventor}
+
+\setbeamerfont{title}{family=\rmfamily,size={\fontsize{30.7}{34}}}
+\setbeamerfont{author}{family=\sffamily,size={\fontsize{14.17}{16}}}
+\setbeamerfont{frametitle}{family=\rmfamily,size={\fontsize{21.3}{23}}}
+\setbeamerfont{framefooter}{family=\sffamily,size={\fontsize{8}{16}}}
+
+\setbeamerfont{itemize/enumerate body}{family=\sffamily, size={\fontsize{15.15}{18.2}}}
+\setbeamerfont{itemize/enumerate subbody}{family=\sffamily, size={\fontsize{12.8}{15.4}}}
+\setbeamerfont{itemize/enumerate subsubbody}{family=\sffamily, size={\fontsize{11.36}{13.6}}}
+
+%% Settings
+\useinnertheme{oucs1}
+\useoutertheme{oucs1}
+\usecolortheme{oucs1}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[rounded][shadow=true]  
+
+\mode<all>

@@ -1,0 +1,23 @@
+% Credit for starting point: https://tex.stackexchange.com/a/146682/256021
+% Developed for OUCS use by David Eyers
+\mode<presentation>
+
+% Frame title
+\defbeamertemplate*{frametitle}{texsx}[1][]
+{
+  \vskip7.9mm
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=north,yshift=-2.5mm] at (current page.north){%
+    \begin{beamercolorbox}[wd=\paperwidth,leftskip=7mm]{frametitle} 
+      \insertframetitle
+    \end{beamercolorbox}
+    };%
+    \node[yshift=4.35mm,text depth=0pt] at (current page.south){%
+    \begin{beamercolorbox}[wd=\paperwidth,leftskip=7mm,rightskip=7mm]{framefooter} 
+      \usebeamerfont{framefooter}\insertshorttitle\insertframesubtitle\hfill\insertframenumber
+    \end{beamercolorbox}
+    };%
+  \end{tikzpicture}
+}
+
+\mode<all>
