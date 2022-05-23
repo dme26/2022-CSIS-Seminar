@@ -1,0 +1,35 @@
+# VSCode user settings
+**/.vscode/settings.json
+# target directory for CI
+public
+# target Beamer files
+slides.pdf
+# LaTeX build files - auxuliary, contents, log
+*.aux
+*.toc
+*.log
+*.fls
+*.tdo
+*.out
+*.rel
+*.nav
+*.snm
+*.xdv
+# BibTeX related files - bibliography, log, 
+*.bbl
+*.blg
+*.vrb
+# Synchronisation
+*.synctex.gz
+*.synctex(busy)
+*.fdb_latexmk
+**/.DS_Store
+L12-automation/nup-crop.pdf
+L12-automation/nup.pdf
+L14-APIs/__pycache__/flask-example.cpython-38.pyc
+L16-compilers/example
+L16-compilers/lex.yy.c
+L16-compilers/example2
+L16-compilers/y.tab.c
+L16-compilers/y.tab.h
+L17-linkers-loaders/greet
