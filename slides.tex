@@ -98,26 +98,84 @@
 \end{dframe}
 
 \begin{dframe}{Containers with \LaTeX}
-  \1 
+  \1 Static websites for openly sharing open source lecture material is a bit niche
+
+  \1 Sharing PDFs of your lecture notes is less so
+  
+  \2 Automation efficiency: want compilation of notes to release them on the web too
+
+  \1 Support Blackboard by managing URLs that link to statically hosted CI-generated PDFs.
+
+  \2 e.g., in COSC202
+  \2 in most of my other papers I still link to the whole paper structure outside Blackboard
+
+  \1 Discuss creating a container that builds content using \LaTeX{}
 \end{dframe}
+
+% include SOAP?
 
 \begin{dframe}{VSCode + \LaTeX}
-  \1 
+  \1 Wanted to move COSC202 to IDE that could be used broadly
+  \1 VSCode development speed has been insane
+  
+  \2 compositionality is extremely impressive
+  \2 e.g., I use a code spellcheck extension to spellcheck my \LaTeX{}
+
+  \1 Integrates version control straightforwardly
+  
+  \2 thus supports Git-driven continuous integration
+  
+  \1 Many more tricks up its sleeve, since it's an electron application
 \end{dframe}
 
-\begin{comment}
+\begin{dframe}{Electron applications}
+  \1 Electron applications use a browser to do rendering
+  \1 However that means they're not too far from web
+  \1 Refactoring of VSCode now provides VSCode Server
+  
+  \2 i.e., you can access VSCode remotely via a web browser
+  \2 VSCode already integrated the idea of remote development environments
+
+  \3 e.g., within software containers, over SSH, etc.
+\end{dframe}
+
 \begin{dframe}{Codespaces}
-  \1 
+  \1 GitHub Codespaces launched in beta in 2020 % TODO
+
+  \2 Provides a means to manage development environments around repositories
+  \2 Active rather than the scheduled feel of continuous integration
+  \2 but can commit back to repositories to trigger CI
+
 \end{dframe}
 
 \begin{dframe}{Gitpod}
-  \1 
+  \1 Codespaces is great, but proprietary
+  \1 Gitpod is to Codespaces what GitLab is to GitHub
+  
+  \2 open source implementation of cloud IDE
+  \2 also a hosted service in the cloud
+
+  \1 Originally Gitpod used a VSCode-like editor
+
+  \2 however now `everyone' is using VSCode
+  \2 So Gitpod does too
+  \2 Gitpod was key in development of VSCode Server
 \end{dframe}
 
 \begin{dframe}{BYOD and remote teaching}
-  \1 
+  \1 So we get to the teaching relevance
+  \1 Advantage of cloud-based IDEs include:
+  
+  \2 Can be hosted in the cloud, or onsite, or both
+  \2 Students can access the environment on any device
+  \2 Lab environment or remote: good access to consistent software
+
+  \1 Very keen to test the practicality of this
+  
+  \2 May couple well with the shift to Windows in the CS labs for 2023
 \end{dframe}
 
+\begin{comment}
 \begin{dframe}{FaaS, serverless and responsiveness}
   \1 Edge appearance
 \end{dframe}
