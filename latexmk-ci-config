@@ -1,0 +1,8 @@
+# Augment path in order to find theme.
+# @default_files = ('slides.tex');
+
+ensure_path( 'TEXINPUTS', 'oucs1-theme//' );
+
+$pdf_mode = 1;
+$postscript_mode = $dvi_mode = 0;
+$preview_continuous_mode = 0;

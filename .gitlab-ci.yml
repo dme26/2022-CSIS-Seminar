@@ -1,0 +1,10 @@
+image: altitude.otago.ac.nz:4567/dme/latex-builder/main
+
+pages:
+  script:
+    - ./slides-to-pdf.sh
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
