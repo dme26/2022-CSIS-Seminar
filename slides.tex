@@ -57,45 +57,59 @@
 
 \begin{dframe}{Web technology evolution}
   \1 Typically don't need PHP for simple content hosting
-  
-  \2 Common to now have a spectrum:
-  \2 Static sites
-  \2 Dynamic content
 
-  \1 Can often link the two together, e.g., using iframes
-  \1 Need something powerful? Grab yourself a virtual machine
+  \2 Dynamic web languages need server execution
+  
+  \3 Security and maintenance hassle...
+
+  \1 Now common to seek static content
+
+  \2 Works well with CDNs
+  \2 JavaScript is typically assumed for client-side Automation
+  \2 Can include dynamic content using \texttt{iframe}s
+
+  \1 Need something powerful? Grab yourself a virtual machine, or a container
 \end{dframe}
 
 \begin{dframe}{SSG---Static Site Generaors}
-  \1 Pull templating back to compile time
-  \1 Popularised through GitHub pages
-  \1 Many SSG tools exist
+  \1 Move template generation back to compile time
 
-  \2 Jekyll
-  \2 Hugo
+  \2 Causes redundant HTML, but not a resource challenge
+
+  \1 Popularised through GitHub pages
+
+  \2 Web serving becomes simple and easy
+
+  \1 Many SSG tools exist, for example:
+
+  \2 Jekyll---written in Ruby; used by GitHub Pages
+
+  \2 Hugo---written in Go
 \end{dframe}
 
 \begin{dframe}{CI---Continuous Integration}
   \1 SSG tools work well with continuous integration
   \1 For example, let's create the website for a new paper
-  % template creation of COSC312
+  
+  \2 We'll use GitLab and the Hugo SSG
+  % TODO template creation of COSC312
 \end{dframe}
 
-\begin{dframe}{Git LFS}
-  \1 Prism allowed one to plonk large files online for sharing
-  \1 OneDrive / Sharepoint is supposed to support sharing
+\begin{dframe}{Carpentries material}
+  \1 Used for Docker lab 
+  \1 Built using Jekyll
+  \1 Can use Docker to build locally
+  \1 But now can move this entirely into cloud
+\end{dframe}
 
-  \2 It does, provided that you have narrow, corporate definitions
-  \2 i.e., content is an office document or near to It
-  \2 sharing is for limited times only---nothing should be too open
+\begin{dframe}{Codespaces}
+  \1 GitHub Codespaces launched in beta in 2020 % TODO
 
-  \1 ITS can help in many ways, but we're not at self-admin levels yet
+  \2 Provides a means to manage development environments around repositories
+  \2 Active rather than the scheduled feel of continuous integration
+  \2 but can commit back to repositories to trigger CI
 
-  \1 Sharing through GitLab Pages feels wrong---objects shouldn't be in Git
-  
-  \1 Enter LFS!
-  % example of using LFS to share files
-
+  \1 Let's use Codespaces to edit the Docker lab
 \end{dframe}
 
 \begin{dframe}{Containers with \LaTeX}
@@ -140,15 +154,6 @@
   \3 e.g., within software containers, over SSH, etc.
 \end{dframe}
 
-\begin{dframe}{Codespaces}
-  \1 GitHub Codespaces launched in beta in 2020 % TODO
-
-  \2 Provides a means to manage development environments around repositories
-  \2 Active rather than the scheduled feel of continuous integration
-  \2 but can commit back to repositories to trigger CI
-
-\end{dframe}
-
 \begin{dframe}{Gitpod}
   \1 Codespaces is great, but proprietary
   \1 Gitpod is to Codespaces what GitLab is to GitHub
@@ -163,6 +168,23 @@
   \2 Gitpod was key in development of VSCode Server
 \end{dframe}
 
+\begin{dframe}{Git LFS}
+  \1 Prism allowed one to plonk large files online for sharing
+  \1 OneDrive / Sharepoint is supposed to support sharing
+
+  \2 It does, provided that you have narrow, corporate definitions
+  \2 i.e., content is an office document or near to It
+  \2 sharing is for limited times only---nothing should be too open
+
+  \1 ITS can help in many ways, but we're not at self-admin levels yet
+
+  \1 Sharing through GitLab Pages feels wrong---objects shouldn't be in Git
+  
+  \1 Enter LFS!
+  % example of using LFS to share files
+
+\end{dframe}
+
 \begin{dframe}{BYOD and remote teaching}
   \1 So we get to the teaching relevance
   \1 Advantage of cloud-based IDEs include:
@@ -170,6 +192,11 @@
   \2 Can be hosted in the cloud, or onsite, or both
   \2 Students can access the environment on any device
   \2 Lab environment or remote: good access to consistent software
+
+  \1 Key challenge: GUIs
+  
+  \2 Not impossible to handle, but typically web is targetted
+  \2 and that doesn't suit all cases
 
   \1 Very keen to test the practicality of this
   
@@ -197,3 +224,13 @@ image: dme26/latex-builder:bullseye-slim
 12:01:30 started building image
 
 Better to use the Gitpod project idea, and install the packages directly
+
+Setup on Gitpod
+Building TeXLive
+
+Started 12:49:30
+Finished 12:55:30
+
+Install vscode-pdf
+
+latexmk -norc -r latexmk-ci-config -pvc -view=none
