@@ -128,6 +128,38 @@
 %  \1 But now can move this entirely into cloud
 \end{dframe}
 
+\begin{dframe}{Visual Studio Code (VSCode)}
+  \1 Wanted to move COSC202 to IDE usable broadly
+  \1 VSCode development speed has been insanely fast:
+  
+  \2 compositionality of extensions is extremely impressive
+  \2 e.g., I use a code spellcheck extension to spellcheck my \LaTeX{}
+
+  \1 Integrates version control straightforwardly
+  
+  \2 thus supports Git-driven continuous integration
+  
+  \1 Many more tricks up its sleeve, since it's an electron application...
+\end{dframe}
+
+\begin{dframe}{VSCode and Electron applications}
+  \1 Electron applications use a browser to do rendering
+  
+  \2 Also means they're close to hosting on web
+
+  \bigskip
+
+  \1 Refactoring of VSCode now provides VSCode Server
+  
+  \2 i.e., you can access VSCode remotely via a web browser
+  
+  \bigskip
+
+  \1 VSCode already integrated the idea of remote development environments
+
+  \2 e.g., development within software containers, over SSH, etc.
+\end{dframe}
+
 \begin{dframe}{Codespaces}
   \1 GitHub Codespaces launched in beta in 2020 % TODO
 
@@ -140,47 +172,48 @@
   \1 Let's use Codespaces to edit the Docker lab
 \end{dframe}
 
-\begin{dframe}{Containers with \LaTeX}
-  \1 Static websites for openly sharing open source lecture material is a bit niche
-
-  \1 Sharing PDFs of your lecture notes is less so
+\begin{dframe}{BYOD and remote teaching}
+ % \1 So we get to the teaching relevance
+  \1 Advantage of cloud-based IDEs include:
   
-  \2 Automation efficiency: want compilation of notes to release them on the web too
+  \2 Can be hosted in the cloud, or onsite, or both
+  \2 Students can access the environment on any device
+  \2 CS Lab environment or remote: consistent access to software
 
-  \1 Support Blackboard by managing URLs that link to statically hosted CI-generated PDFs.
+  \1 Key challenge: GUIs
+  
+  \2 Not impossible to handle, but typically web is targetted
+%  \2 and that doesn't suit all cases
 
-  \2 e.g., in COSC202
-  \2 in most of my other papers I still link to the whole paper structure outside Blackboard
+  \1 Very keen to test the practicality of this
+  
+  \2 May couple well with the CS lab shift to Windows for 2023
+\end{dframe}
 
-  \1 Discuss creating a container that builds content using \LaTeX{}
+\begin{dframe}{Containers that build \LaTeX{} into PDF}
+  % \1 Static websites for openly sharing open source lecture material is a bit niche
+
+  \1 Using \LaTeX{} to make your lecture notes?
+  
+  \2 Can use CI to share with students the PDFs produced
+  \2 Can create Docker container that builds \LaTeX{}
+  
+  \1 Using VSCode to edit your \LaTeX{}
+
+  \2 Can use online VSCode to update your notes from anywhere
+
+  % \2 Automation efficiency: want compilation of notes to release them on the web too
+
+  \1 Support Blackboard by including PDFs by URL
+ 
+  \2 URLs from Blackboard link to CI-generated PDFs.
+
+  \2 (or just link out to your own static website...)
+
+  % \1 Discuss creating a container that builds content using \LaTeX{}
 \end{dframe}
 
 % include SOAP?
-
-\begin{dframe}{VSCode + \LaTeX}
-  \1 Wanted to move COSC202 to IDE that could be used broadly
-  \1 VSCode development speed has been insane
-  
-  \2 compositionality is extremely impressive
-  \2 e.g., I use a code spellcheck extension to spellcheck my \LaTeX{}
-
-  \1 Integrates version control straightforwardly
-  
-  \2 thus supports Git-driven continuous integration
-  
-  \1 Many more tricks up its sleeve, since it's an electron application
-\end{dframe}
-
-\begin{dframe}{Electron applications}
-  \1 Electron applications use a browser to do rendering
-  \1 However that means they're not too far from web
-  \1 Refactoring of VSCode now provides VSCode Server
-  
-  \2 i.e., you can access VSCode remotely via a web browser
-  \2 VSCode already integrated the idea of remote development environments
-
-  \3 e.g., within software containers, over SSH, etc.
-\end{dframe}
 
 \begin{dframe}{Gitpod}
   \1 Codespaces is great, but proprietary
@@ -211,24 +244,6 @@
   \1 Enter LFS!
   % example of using LFS to share files
 
-\end{dframe}
-
-\begin{dframe}{BYOD and remote teaching}
-  \1 So we get to the teaching relevance
-  \1 Advantage of cloud-based IDEs include:
-  
-  \2 Can be hosted in the cloud, or onsite, or both
-  \2 Students can access the environment on any device
-  \2 Lab environment or remote: good access to consistent software
-
-  \1 Key challenge: GUIs
-  
-  \2 Not impossible to handle, but typically web is targetted
-  \2 and that doesn't suit all cases
-
-  \1 Very keen to test the practicality of this
-  
-  \2 May couple well with the shift to Windows in the CS labs for 2023
 \end{dframe}
 
 \begin{comment}
