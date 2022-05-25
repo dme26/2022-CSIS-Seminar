@@ -4,8 +4,8 @@
 
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
-  - init: sudo apt-get update && sudo apt-get install -y biber latexmk make texlive-full curl && sudo rm -rf /var/lib/apt/lists/*
-    command: echo 'Echo from start script'
+  - init: echo "Largely empty prebuild"
+    command: sudo apt-get update && sudo apt-get install -y biber latexmk make texlive-full curl && sudo rm -rf /var/lib/apt/lists/*
 
 # List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
 ports:
