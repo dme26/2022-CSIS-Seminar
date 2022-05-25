@@ -74,11 +74,15 @@
 \begin{dframe}{SSG---Static Site Generaors}
   \1 Move template generation back to compile time
 
+  \2 Run SSG over source code, HTML files produced
+  \2 Often Markdown used for source code
   \2 Causes redundant HTML, but not a resource challenge
 
   \1 Popularised through GitHub pages
 
   \2 Web serving becomes simple and easy
+
+  % \3 ... which is why GitHub can do it for free
 
   \1 Many SSG tools exist, for example:
 
@@ -89,17 +93,39 @@
 
 \begin{dframe}{CI---Continuous Integration}
   \1 SSG tools work well with continuous integration
-  \1 For example, let's create the website for a new paper
+
+  \2 You update your source content, commit, push
+  \2 CI runs SSG to build HTML
+  \2 Install HTML on web server
+
+  \bigskip
+  
+  \1 This is covered in COSC212 and COSC202
+  
+  \bigskip
+
+  \1 Demo-wise, let's create the website for a new paper
   
   \2 We'll use GitLab and the Hugo SSG
   % TODO template creation of COSC312
 \end{dframe}
 
-\begin{dframe}{Carpentries material}
-  \1 Used for Docker lab 
-  \1 Built using Jekyll
-  \1 Can use Docker to build locally
-  \1 But now can move this entirely into cloud
+\begin{dframe}{Jekyll builds Carpentries teaching material}
+  \1 The Carpentries promotes digital research skills
+
+  \2 Releases materials as open source
+
+  \bigskip
+  
+  \1 Runs an incubator for new lesson material
+  
+  \2 I contributed the Docker lesson
+  \2 Have also used in COSC349 and COSC202
+  
+  \bigskip
+
+  \1 Let's build that lesson using Docker
+%  \1 But now can move this entirely into cloud
 \end{dframe}
 
 \begin{dframe}{Codespaces}
@@ -108,6 +134,8 @@
   \2 Provides a means to manage development environments around repositories
   \2 Active rather than the scheduled feel of continuous integration
   \2 but can commit back to repositories to trigger CI
+
+  \bigskip
 
   \1 Let's use Codespaces to edit the Docker lab
 \end{dframe}
