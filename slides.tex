@@ -130,65 +130,79 @@
 \end{dframe}
 
 \begin{dframe}{Visual Studio Code (VSCode)}
-  \1 Wanted to move COSC202 to IDE usable broadly
-  \1 VSCode development speed has been insanely fast:
-  
-  \2 compositionality of extensions is extremely impressive
-  \2 e.g., I use a code spellcheck extension to spellcheck my \LaTeX{}
+  \1 Wanted to start COSC202 on an \textbf{IDE usable broadly}
 
-  \1 Integrates version control straightforwardly
+  \smallskip
+
+  \1 \textbf{Chose VSCode}: development fast and productive
   
-  \2 thus supports Git-driven continuous integration
+  \2 compositionality of extensions impressive---good design
   
-  \1 Many more tricks up its sleeve, since it's an electron application...
+  \3 e.g., I use a code spellcheck extension to spellcheck my \LaTeX{}
+
+  \2 Integrates version control straightforwardly
+  
+  \3 thus supports Git-driven continuous integration
+
+  \smallskip
+
+  \1 Features for \textbf{future teaching exploration} include:
+
+  \2 Support for developing within Docker containers
+  \2 Support for developing on the cloud
 \end{dframe}
 
 \begin{dframe}{VSCode and Electron applications}
-  \1 Electron applications use a browser to do rendering
-  
+  \1 VSCode is an Electron application
+
+  \2 Electron applications use \textbf{web tech for desktop apps}
   \2 Also means they're close to hosting on web
 
   \bigskip
 
-  \1 Refactoring of VSCode now provides VSCode Server
-  
-  \2 i.e., you can access VSCode remotely via a web browser
-  
+  \1 VSCode evolved to be able to \textbf{run in web browser}
+
+  \2 Server component runs actual VSCode backend
+    
   \bigskip
 
-  \1 VSCode already integrated the idea of remote development environments
+  \1 VSCode's server component can run anywhere
 
-  \2 e.g., development within software containers, over SSH, etc.
+  \2 e.g., your VSCode can be \textbf{running on a cloud server}
+
 \end{dframe}
 
-\begin{dframe}{Codespaces}
-  \1 GitHub Codespaces launched in beta in 2020 % TODO
+\begin{dframe}{GitHub Codespaces: a cloud-based IDE}
+  \1 GitHub Codespaces beta launched around May 2020
 
-  \2 Provides a means to manage development environments around repositories
-  \2 Active rather than the scheduled feel of continuous integration
-  \2 but can commit back to repositories to trigger CI
+  \2 \textbf{Pay-as-you-go IDE} in the cloud
+  \2 Manage development environments \textbf{linked to repositories}
+  \2 Active rather than the batch job feel of continuous integration
+  \2 \dots but can commit back to repositories to trigger CI
 
   \bigskip
 
-  \1 Let's use Codespaces to edit lesson from Carpentries
+  \1 Let's use Codespaces to edit Carpentries lesson
 \end{dframe}
 
-\begin{dframe}{BYOD and remote teaching}
- % \1 So we get to the teaching relevance
-  \1 Advantage of cloud-based IDEs include:
+\begin{dframe}{Teaching on BYOD and remote}
+  \1 Advantages of cloud-based IDE tech include:
   
-  \2 Can be hosted in the cloud, or onsite, or both
-  \2 Students can access the environment on any device
+  \2 Can be hosted in the \textbf{cloud, onsite, or both}
+  \2 Students can access the environment \textbf{on any device}
   \2 CS Lab environment or remote: consistent access to software
 
-  \1 Key challenge: GUIs
+  \medskip
+
+  \1 Challenge based on current papers: \textbf{use of GUIs}
   
   \2 Not impossible to handle, but typically web is targetted
+  \2 Move to Electron development for GUI apps?
 %  \2 and that doesn't suit all cases
 
-  \1 Very keen to test the practicality of this
-  
-  \2 May couple well with the CS lab shift to Windows for 2023
+  \medskip
+
+  \1 May couple with CS lab shift to Windows for 2023
 \end{dframe}
 
 \begin{dframe}{Containers that build \LaTeX{} into PDF}
@@ -196,18 +210,22 @@
 
   \1 Using \LaTeX{} to make your lecture notes?
   
-  \2 Can use CI to share with students the PDFs produced
-  \2 Can create Docker container that builds \LaTeX{}
+  \2 Can use \textbf{CI to share with students} the PDFs produced
+  \2 Need a Docker container that builds \LaTeX{}
   
-  \1 Using VSCode to edit your \LaTeX{}
-
-  \2 Can use online VSCode to update your notes from anywhere
-
+  \medskip
+  
+  \1 Using VSCode to edit your \LaTeX{}?
+  
+  \2 Can use online VSCode to \textbf{update your notes from anywhere}
+  
   % \2 Automation efficiency: want compilation of notes to release them on the web too
+  
+  \medskip
 
-  \1 Support Blackboard by including PDFs by URL
+  \1 Use links to share PDFs from Blackboard
  
-  \2 URLs from Blackboard link to CI-generated PDFs.
+  \2 i.e., URLs from Blackboard \textbf{direct to CI-generated PDFs}.
 
   \2 (or just link out to your own static website...)
 
@@ -216,38 +234,63 @@
 
 % include SOAP?
 
-\begin{dframe}{Gitpod}
-  \1 Codespaces is great, but proprietary
+\begin{dframe}{Gitpod: open-source cloud IDE}
+  \1 GitHub Codespaces is great, but \textbf{closed technology}
+
+  \bigskip
   \1 Gitpod is to Codespaces what GitLab is to GitHub
   
-  \2 open source implementation of cloud IDE
-  \2 also a hosted service in the cloud
+  \2 \textbf{Open source implementation} of cloud IDE
 
+  
+  \2 Gitpod also provides a hosted service in the cloud
+  
+  \bigskip
   \1 Originally Gitpod used a VSCode-like editor
-
-  \2 however now `everyone' is using VSCode
-  \2 So Gitpod does too
-  \2 Gitpod was key in development of VSCode Server
+  
+  \2 however, now `everyone' uses VSCode, so Gitpod does too
+  \2 \textbf{Gitpod shared OpenVSCodeServer}---open VSCode back-end
 \end{dframe}
 
 \begin{dframe}{Git-based web can share large files (LFS)}
-  \1 Many ways to share files publicly of different sizes
+  \1 Many ways to \textbf{share files publicly} of different sizes
 
   \2 e.g., CloudStor, OneDrive(ish), FileDrop, Globus, etc.
   \2 (ITS can advise on the different options)
 %  \2 sharing seems to only be for limited times only
 
-  \1 CS website allowed persistent public sharing of files
+  \1 CS website allowed \textbf{persistent public sharing} of files
 
   \2 but adding transient files to Git not ideal
   \2 `deleted' files will still be in Git history
 
-  \1 GitLab supports Git LFS---i.e., large file support
+  \1 \textbf{GitLab supports Git LFS}---i.e., large file support
 
   \2 Files in Git are instead more like symlinks
   \2 Git LFS organises for large files to be downloaded
 
   % example of using LFS to share files
+\end{dframe}
+
+\begin{dframe}{Takeaways}
+  \1 Cloud-based software development \textbf{evolving quickly}
+
+  \2 Worth watching for \textbf{teaching-relevant opportunities}
+
+  \medskip
+  
+  \1 Discussed pros: \textbf{unify BYOD, lab and remote teaching}
+
+  \medskip
+  
+  \1 Also challenges: graphics use, local hardware devices
+
+  \medskip
+  
+  \1 Keen to \textbf{host Gitpod locally} for prototyping:
+  
+  \2 test tighter \textbf{teaching software integrations}
+  \2 test \textbf{porting software} we already use to cloud IDEs
 
 \end{dframe}
 
