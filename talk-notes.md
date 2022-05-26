@@ -41,6 +41,7 @@ TODO
 - Assume started by steps shown above
 - build document once: `latexmk -norc -r latexmk-ci-config`
 - build document watching changes: `latexmk -norc -r latexmk-ci-config -pvc -view=none`
+- (MAYBE) direct pdf.js viewing
 
 ## Git LFS
 
