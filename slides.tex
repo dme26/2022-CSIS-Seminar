@@ -229,19 +229,23 @@
   \2 Gitpod was key in development of VSCode Server
 \end{dframe}
 
-\begin{dframe}{Git LFS}
-  \1 Prism allowed one to plonk large files online for sharing
-  \1 OneDrive / Sharepoint is supposed to support sharing
+\begin{dframe}{Git-based web can share large files (LFS)}
+  \1 Many ways to share files publicly of different sizes
 
-  \2 It does, provided that you have narrow, corporate definitions
-  \2 i.e., content is an office document or near to It
-  \2 sharing is for limited times only---nothing should be too open
+  \2 e.g., CloudStor, OneDrive(ish), FileDrop, Globus, etc.
+  \2 (ITS can advise on the different options)
+%  \2 sharing seems to only be for limited times only
 
-  \1 ITS can help in many ways, but we're not at self-admin levels yet
+  \1 CS website allowed persistent public sharing of files
 
-  \1 Sharing through GitLab Pages feels wrong---objects shouldn't be in Git
-  
-  \1 Enter LFS!
+  \2 but adding transient files to Git not ideal
+  \2 `deleted' files will still be in Git history
+
+  \1 GitLab supports Git LFS---i.e., large file support
+
+  \2 Files in Git are instead more like symlinks
+  \2 Git LFS organises for large files to be downloaded
+
   % example of using LFS to share files
 
 \end{dframe}
