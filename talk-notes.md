@@ -36,11 +36,12 @@ The overall aim is to provide students with an understanding of the role played 
 - http://0.0.0.0:4000
 - edit `index.md`; reload web browser
 
-### TODO Riskier option; use explicit Jekyll Docker command to run server
+### Riskier option; use explicit Jekyll Docker command to run server
 - figure out explicit Jekyll to use instead of make docker
 - https://github.com/oucs-teaching/2022-cosc202-docker-introduction
 - `git clone git@github.com:oucs-teaching/2022-cosc202-docker-introduction.git cosc202-docker-intro`
-- `make docker-serve`
+- `docker run --rm -it --mount type=bind,source=${PWD},target=/srv/jekyll -p 127.0.0.1:4000:4000 jekyll/jekyll:3 jekyll serve`
+- takes 11:20:30 - 11:21:36
 
 ## Codespaces with Carpentry Docker lesson
 
@@ -57,6 +58,12 @@ The overall aim is to provide students with an understanding of the role played 
 
 ## Gitpod with LaTeX talk
 
+- Show seminar
+- https://altitude.otago.ac.nz/dme/2022-csis-seminar
+- show `.gitlab-ci.yaml`
+- https://altitude.otago.ac.nz/dme/latex-builder
+- https://hub.docker.com/repository/docker/dme26/latex-builder
+
 - Assume started by steps shown above
 - build document once: `latexmk -norc -r latexmk-ci-config`
 - build document watching changes: `latexmk -norc -r latexmk-ci-config -pvc -view=none`
@@ -67,6 +74,10 @@ The overall aim is to provide students with an understanding of the role played 
 - https://altitude.otago.ac.nz/dme/git-lfs-test
 - show content of `.gitlab-ci.yml`
 - show content of `.gitattributes`
+
+- `cd ~/tmp`
+- `git clone git@altitude.otago.ac.nz:dme/git-lfs-test.git`
+- `git lfs ls-files`
 
 ### checking out to a local system
 - Need to have git-lfs support, e.g., macOS: `sudo port install git-lfs`
