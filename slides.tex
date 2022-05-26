@@ -24,108 +24,109 @@
   \2 I now edit \LaTeX{} using Visual Studio Code instead of Emacs
   \2 I finally converted Lech's lecture slide template to Beamer
   
-  \bigskip
+  \medskip
 
   \1 My plan is to cover two topics:
 
   \2 Using \textbf{continuous integration} for teaching material
   \2 Potentially adopting \textbf{cloud-based IDEs} for teaching
 
-  \bigskip
+  \medskip
 
   \1 Also aim to explain relevance of two changes above!
 
 \end{dframe}
 
 \begin{dframe}{Outgoing CS webserver setup}
-  \1 Previously: all CS course material at \url{www.cs.otago.ac.nz}
+  \1 Previously: all \textbf{CS course material} at \url{www.cs.otago.ac.nz}
 
   \2 Content normally reaches the web care of \url{prism.otago.ac.nz}
-  \2 Content usually publicly available---good!
+  \2 Content usually \textbf{was publicly available}---good!
   \2 Supports dynamic web page content, e.g., using PHP
   
   \3 Security isolation through server design
 
   \medskip
 
-  \1 Pandemic led to CS shift to Blackboard
+  \1 Pandemic led to CS \textbf{shift to Blackboard}
 
-  \2 Aim to simplify student experience---important
+  \2 Aim to \textbf{simplify student experience}---important
   \2 Blackboard handles some student/teaching needs OK (?)
-  \2 Soon: Blackboard will move to cloud; also LMS review
+  \2 Soon: Blackboard will \textbf{move to cloud}; also \textbf{LMS review}
 \end{dframe}
 
-\begin{dframe}{Web technology evolution}
-  \1 Typically don't need PHP for simple content hosting
+\begin{dframe}{General web technology evolution}
+  \1 Typically \textbf{don't need PHP} for simple content hosting
 
   \2 Dynamic web languages need server execution
   
   \3 Security and maintenance hassle...
 
-  \1 Now common to seek static content
+  \1 Now common to aim to \textbf{generate static content}
 
-  \2 Works well with CDNs
+  \2 Works well with content delivery networks (CDNs)
   \2 JavaScript is typically assumed for client-side Automation
-  \2 Can include dynamic content using \texttt{iframe}s
+  \2 Can include \textbf{dynamic content using \texttt{iframe}s}
 
-  \1 Need something powerful? Grab yourself a virtual machine, or a container
+  \1 Need something more powerful?
+  
+  \2 Grab yourself a virtual machine, or \textbf{a container}
 \end{dframe}
 
 \begin{dframe}{SSG---Static Site Generaors}
-  \1 Move template generation back to compile time
+  \1 Move \textbf{application of templates} back to `compile time'
 
   \2 Run SSG over source code, HTML files produced
   \2 Often Markdown used for source code
   \2 Causes redundant HTML, but not a resource challenge
 
-  \1 Popularised through GitHub pages
+  \1 Popularised through \textbf{GitHub pages}
 
-  \2 Web serving becomes simple and easy
+  \2 Web serving becomes simple and easy too
 
   % \3 ... which is why GitHub can do it for free
 
   \1 Many SSG tools exist, for example:
 
-  \2 Jekyll---written in Ruby; used by GitHub Pages
+  \2 \textbf{\href{http://jekyllrb.com}{Jekyll}}---written in Ruby; used by GitHub Pages
 
-  \2 Hugo---written in Go
+  \2 \textbf{Hugo}---written in Go
 \end{dframe}
 
 \begin{dframe}{CI---Continuous Integration}
-  \1 SSG tools work well with continuous integration
+  \1 SSG tools work well with \textbf{continuous integration}, e.g., 
 
-  \2 You update your source content, commit, push
-  \2 CI runs SSG to build HTML
-  \2 Install HTML on web server
-
+  \2 Update your source content;
+  \2 Git commit, Git push;
+  \2 CI runs SSG to build HTML;
+  \2 HTML passed to webserver
+   
   \bigskip
   
-  \1 This is covered in COSC212 and COSC202
+  \1 Let's \href{https://altitude.otago.ac.nz/cosc312}{create the website} for a new COSC paper
   
-  \bigskip
-
-  \1 Demo-wise, let's create the website for a new paper
-  
-  \2 We'll use CS GitLab at \url{altitude.otago.ac.nz} and the Hugo SSG
-  % TODO template creation of COSC312
+  \2 We'll use Hugo for the static site generation
+  \2 \textbf{CS GitLab} at \href{https://altitude.otago.ac.nz/}{\texttt{altitude.otago.ac.nz}} provides \textbf{CI and web server}
+ 
+  \3 Use of GitLab Pages covered in \href{http://cosc212.cspages.otago.ac.nz/LabBook/LabBook.pdf}{COSC212} \& \href{http://cosc202.cspages.otago.ac.nz/lab-book/COSC202LabBook.pdf}{COSC202} lab books
 \end{dframe}
 
 \begin{dframe}{Jekyll builds Carpentries teaching material}
-  \1 The Carpentries promotes digital research skills
+  \1 The Carpentries promotes \textbf{digital research skills}
 
-  \2 Releases materials as open source
+  \2 Releases teaching materials as open source via the web
+  \2 Uses Jekyll SSG to produce its pages (e.g., GitHub Pages)
 
   \bigskip
+
+  \1 Carpentries lessons used within COSC202 \& COSC349
   
-  \1 Runs an incubator for new lesson material
-  
-  \2 I contributed the Docker lesson
-  \2 Have also used in COSC349 and COSC202
+  \2 \textbf{Unix Shell and Git} are core lessons
+  \2 \textbf{Docker} lesson is in the Carpentries Incubator
   
   \bigskip
 
-  \1 Let's build that lesson using Docker
-%  \1 But now can move this entirely into cloud
+  \1 Let's build a \textbf{Carpentries lesson website} using Docker
 \end{dframe}
 
 \begin{dframe}{Visual Studio Code (VSCode)}
